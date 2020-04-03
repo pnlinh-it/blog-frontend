@@ -8,7 +8,6 @@ Vue.use(Vuesax, {
     // options here
 })
 
-
 Vue.config.productionTip = false
 
 
@@ -18,7 +17,9 @@ import './assets/scss/main.scss'
 // Tailwind
 import '@/assets/css/main.css'
 
+import store from './store/index'
 
 new Vue({
+    store,
     render: h => h(App),
 }).$mount('#app')
