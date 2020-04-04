@@ -8,8 +8,9 @@ Vue.use(Vuesax, {
     // options here
 })
 
-Vue.config.productionTip = false
+import 'material-icons/iconfont/material-icons.css';
 
+Vue.config.productionTip = false
 
 // Styles: SCSS
 import './assets/scss/main.scss'

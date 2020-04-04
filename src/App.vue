@@ -1,19 +1,14 @@
 <template>
-    <div id="app">
-        <img alt="Vue logo" src="./assets/logo.png" class="w-4 ml-3 shadow">
-      <label>ScrollY: {{scrollY}}</label>
-      <HelloWorld msg="Welcome to Your Vue.js App"/>
-        <vs-button color="warning" type="flat">Hello Vuesax</vs-button>
-    </div>
+    <main-layout/>
 </template>
 
 <script>
-    import HelloWorld from './components/HelloWorld.vue'
+    import MainLayout from "@/layouts/MainLayout";
 
     export default {
         name: 'App',
         components: {
-            HelloWorld
+            MainLayout
         },
         computed: {
             scrollY() {
