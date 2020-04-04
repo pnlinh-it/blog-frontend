@@ -10,10 +10,18 @@
         components: {
             MainLayout
         },
-        data() {
-            return {
-                active: true
+        computed: {
+            scrollY() {
+                return this.$store.state.scrollY;
             }
+        },
+        methods: {
+            handleScrollChange() {
+                this.$store.commit('UPDATE_WINDOW_SCROLL_Y', window.scrollY)
+            }
+        },
+        async created() {
+            window.addEventListener('scroll', this.handleScrollChange);
         }
     }
 </script>
