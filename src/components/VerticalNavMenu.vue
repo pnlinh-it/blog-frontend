@@ -12,7 +12,7 @@
                             </div>
                             <ul>
                                 <li v-for="(subItem, index) in item.submenu" :key="index"
-                                class="menu-item-group-item">
+                                    class="menu-item-group-item">
                                     <a href="#" class="px-8 py-2 flex items-center">
                                         <vs-icon icon="lens" class="mr-2"></vs-icon>
                                         <span>{{subItem.name}}</span>
@@ -62,7 +62,7 @@
                     }
                 ]
             }
-        }
+        },
     }
 </script>
 
@@ -110,7 +110,6 @@
                     }
                 }
             }
-
         }
     }
 

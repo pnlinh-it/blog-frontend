@@ -10,18 +10,27 @@
         components: {
             MainLayout
         },
-        computed: {
-            scrollY() {
-                return this.$store.state.scrollY;
-            }
-        },
+
         methods: {
             handleScrollChange() {
                 this.$store.commit('UPDATE_WINDOW_SCROLL_Y', window.scrollY)
+            },
+            handleWidthChange() {
+                this.$store.commit('UPDATE_WINDOW_WIDTH', window.innerWidth)
             }
         },
+
+        mounted() {
+            this.$store.commit('UPDATE_WINDOW_WIDTH', window.innerWidth)
+        },
+
         async created() {
             window.addEventListener('scroll', this.handleScrollChange);
+            window.addEventListener('resize', this.handleWidthChange);
+        },
+        destroyed() {
+            window.removeEventListener('scroll', this.handleScrollChange)
+            window.removeEventListener('resize', this.handleWidthChange);
         }
     }
 </script>

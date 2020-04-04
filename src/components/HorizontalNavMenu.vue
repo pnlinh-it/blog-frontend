@@ -1,54 +1,57 @@
 <template>
     <div class="centerx">
-        <template v-if="true">
-            <div class="header-nav-container flex">
-                <div class="flex container mx-auto items-center">
+        <div class="header-nav-container flex" :class="navClass">
+            <div class="flex container mx-auto items-center">
                     <span class="text-white">
                         Hi there
                     </span>
-                    <vs-spacer/>
-                    <ul class="flex flex-wrap items-center">
-                        <li class="menu-item"
-                            v-for="(item, index) in navMenuItems" :key="index">
+                <vs-spacer/>
+                <ul class="flex flex-wrap items-center">
+                    <li class="menu-item"
+                        v-for="(item, index) in navMenuItems" :key="index">
 
-                            <template v-if="item.submenu">
-                                <div class="menu-item-group relative cursor-default">
-                                    <div class="menu-item-group-header flex items-center p-3">
-                                        <vs-icon :icon="item.icon"
-                                                 class="mr-2 transition-all duration-300"></vs-icon>
-                                        <span class="mr-1 transition-all duration-300">  {{item.name}}</span>
-                                        <vs-icon icon="keyboard_arrow_down"
-                                                 class="transition-all duration-300"></vs-icon>
-                                    </div>
-
-                                    <ul class="menu-item-group-items absolute shadow-drop shadow-lg overflow-hidden">
-                                        <li v-for="(subItem, subIndex) in  item.submenu" :key="subIndex"
-                                            class="p-2">
-                                            <a href="#" class="flex items-center transition-all duration-300">
-                                                <vs-icon icon="lens" class="transition-all duration-300 ml-2"></vs-icon>
-                                                <span class="ml-2 text-white transition-all duration-300 ">{{subItem.name}}</span>
-                                            </a>
-                                        </li>
-                                    </ul>
+                        <template v-if="item.submenu">
+                            <div class="menu-item-group relative cursor-default">
+                                <div class="menu-item-group-header flex items-center p-3">
+                                    <vs-icon :icon="item.icon"
+                                             class="mr-2 transition-all duration-300"></vs-icon>
+                                    <span class="mr-1 transition-all duration-300">  {{item.name}}</span>
+                                    <vs-icon icon="keyboard_arrow_down"
+                                             class="transition-all duration-300"></vs-icon>
                                 </div>
-                            </template>
 
-                            <a v-else href="#" class="menu-item-link flex items-center p-3 relative">
-                                <vs-icon :icon="item.icon" class="transition-all duration-300"></vs-icon>
-                                <span class="ml-2 text-white transition-all duration-300">{{item.name}}</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                                <ul class="menu-item-group-items absolute shadow-drop shadow-lg overflow-hidden">
+                                    <li v-for="(subItem, subIndex) in  item.submenu" :key="subIndex"
+                                        class="p-2">
+                                        <a href="#" class="flex items-center transition-all duration-300">
+                                            <vs-icon icon="lens" class="transition-all duration-300 ml-2"></vs-icon>
+                                            <span class="ml-2 text-white transition-all duration-300 ">{{subItem.name}}</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </template>
 
+                        <a v-else href="#" class="menu-item-link flex items-center p-3 relative">
+                            <vs-icon :icon="item.icon" class="transition-all duration-300"></vs-icon>
+                            <span class="ml-2 text-white transition-all duration-300">{{item.name}}</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </template>
+
+        </div>
     </div>
 </template>
 
 <script>
     export default {
-
+        props: {
+            isFixed: {
+                type: Boolean,
+                default: false
+            }
+        },
         data() {
             return {
                 navMenuItems: [
@@ -74,7 +77,12 @@
                     }
                 ]
             }
-        }
+        },
+        computed: {
+            navClass() {
+                return {'sticky-fixed': this.isFixed};
+            }
+        },
     }
 </script>
 
@@ -153,7 +161,6 @@
                     }
                 }
             }
-
 
             .menu-item-group {
                 .menu-item-group-items {
