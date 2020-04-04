@@ -1,6 +1,6 @@
 <template>
-    <!--nav-->
     <div>
+        <!--Desktop header-->
         <div v-show="isDesktop" class="bg-top">
             <horizontal-nav-menu :is-fixed="isStickyFixed" class="mt-10"/>
 
@@ -26,10 +26,12 @@
             </div>
         </div>
 
+        <!--Mobile header-->
         <div v-show="!isDesktop">
             <header-mobile-nav-menu @onOpenSideBarClick="isSideBarOpen=true"></header-mobile-nav-menu>
         </div>
 
+        <!--Lef SideBar-->
         <vs-sidebar parent="body" v-model="isSideBarOpen" class="sidebarx" spacer>
             <vertical-nav-menu/>
         </vs-sidebar>
@@ -41,7 +43,6 @@
     import HorizontalNavMenu from "@/components/HorizontalNavMenu";
     import HeaderMobileNavMenu from "@/components/HeaderMobileNavMenu";
     import VerticalNavMenu from "@/components/VerticalNavMenu";
-
 
     export default {
         components: {

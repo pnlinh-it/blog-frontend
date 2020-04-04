@@ -1,7 +1,7 @@
 <template>
     <div class="centerx">
         <div class="header-nav-container flex" :class="navClass">
-            <div class="flex container mx-auto items-center">
+            <div class="flex container mx-auto items-center px-4">
                     <span class="text-white">
                         Hi there
                     </span>
