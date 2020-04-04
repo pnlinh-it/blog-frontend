@@ -7,7 +7,7 @@ import 'vuesax/dist/vuesax.css'
 Vue.use(Vuesax, {
     // options here
 })
-
+import 'material-icons/iconfont/material-icons.css';
 
 Vue.config.productionTip = false
 
