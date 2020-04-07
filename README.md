@@ -1,24 +1,3 @@
-# fe
+# \[ 🚧 Work in progress 👷‍♀️⛏👷🔧️👷🔧 🚧 \] My blog
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+<img src="https://user-images.githubusercontent.com/11713395/78616876-c5176780-789f-11ea-9b43-428c679d7f33.png" width=500/>
