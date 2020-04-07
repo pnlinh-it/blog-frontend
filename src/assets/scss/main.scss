@@ -1,0 +1,17 @@
+@import "varibles";
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  color: $text-color;
+  background: $background;
+  font-size: .875rem;
+}
+
+*:focus, *:hover, *:active, *:visited {
+  outline: none !important;
+}
+
+
