@@ -2,24 +2,18 @@
     <div class="main-layout">
         <header-main class="mb-5"/>
 
-        <div class="sm:flex block container mx-auto px-4">
-            <div class="w-full sm:w-8/12 bg-gray-500 h-screen">
-
-            </div>
-
-            <div class="w-full sm:w-4/12 bg-green-500">
-
-            </div>
-        </div>
+        <home/>
     </div>
 </template>
 
 <script>
     import HeaderMain from "@/components/HeaderMain";
+    import Home from "@/views/Home";
 
     export default {
         components: {
-            HeaderMain
+            HeaderMain,
+            Home
         }
     }
 </script>
